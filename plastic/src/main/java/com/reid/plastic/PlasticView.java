@@ -20,7 +20,7 @@ import android.widget.RelativeLayout;
 
 public class PlasticView extends FrameLayout {
 
-    private static final int TYPE_HEADER = 200000;//设置一个很大的数字,尽可能避免和用户的adapter冲突
+    private static final int TYPE_HEADER = 200000;
     private static final int TYPE_FOOTER = 100000;
 
     private SparseArray<DecorativeView> mHeaderViews = new SparseArray<>();
