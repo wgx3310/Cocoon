@@ -18,6 +18,7 @@ import android.widget.Toast;
 import com.reid.cocoon.R;
 import com.reid.cocoon.adapter.PhotoPagerAdapter;
 import com.reid.cocoon.common.utils.DoubleTapHelper;
+import com.reid.cocoon.common.utils.IntentHelper;
 import com.reid.cocoon.ui.activity.AboutActivity;
 import com.reid.cocoon.ui.fragment.NewFragment;
 import com.reid.cocoon.ui.fragment.PopularFragment;
@@ -45,7 +46,7 @@ public class HomeActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-        navigationView.setCheckedItem(R.id.nav_camera);
+        navigationView.setCheckedItem(R.id.nav_home);
 
         mViewPager = findViewById(R.id.viewPager);
         mPagerAdapter = new PhotoPagerAdapter(getSupportFragmentManager());
@@ -73,11 +74,17 @@ public class HomeActivity extends AppCompatActivity
         int id = item.getItemId();
 
         switch (id){
-            case R.id.nav_camera:
+            case R.id.nav_home:
+                mViewPager.setCurrentItem(0);
+                break;
+            case R.id.nav_popular:
+                mViewPager.setCurrentItem(1);
+                break;
+            case R.id.nav_setting:
+                IntentHelper.goSettings(this);
                 break;
             case R.id.nav_about:
-                Intent intent = new Intent(this, AboutActivity.class);
-                startActivity(intent);
+                IntentHelper.goAbout(this);
                 break;
             default:
                 break;

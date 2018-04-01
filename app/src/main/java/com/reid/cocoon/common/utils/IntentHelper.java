@@ -6,9 +6,25 @@ import android.text.TextUtils;
 
 import com.reid.cocoon.common.AppCompat;
 import com.reid.cocoon.common.content.SettingKeys;
+import com.reid.cocoon.ui.activity.AboutActivity;
+import com.reid.cocoon.ui.activity.SettingsActivity;
 import com.reid.cocoon.ui.activity.WebActivity;
 
 public class IntentHelper {
+
+    public static void goSettings(Context context){
+        if (context == null) context = AppCompat.getContext();
+
+        Intent setting = new Intent(context, SettingsActivity.class);
+        context.startActivity(setting);
+    }
+
+    public static void goAbout(Context context){
+        if (context == null) context = AppCompat.getContext();
+
+        Intent about = new Intent(context, AboutActivity.class);
+        context.startActivity(about);
+    }
 
     public static void goWeb(Context context, String title, String uri){
         if (TextUtils.isEmpty(uri)) return;

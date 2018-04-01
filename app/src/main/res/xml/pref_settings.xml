@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="清空缓存">
+        <PreferenceScreen android:key="clear_image_cache"
+            android:title="清除图片缓存"/>
+
+        <PreferenceScreen android:key="clear_data_cache"
+            android:title="清除数据缓存"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="其它">
+        <Preference android:key="app_version"
+            android:title="Version"/>
+
+        <Preference android:key="app_about"
+            android:title="About" />
+    </PreferenceCategory>
+
+</PreferenceScreen>
