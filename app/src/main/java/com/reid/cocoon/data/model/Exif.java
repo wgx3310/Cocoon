@@ -1,4 +1,4 @@
-package com.reid.cocoon.data.bean;
+package com.reid.cocoon.data.model;
 
 import com.google.gson.annotations.SerializedName;
 

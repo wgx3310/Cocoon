@@ -2,7 +2,7 @@ package com.reid.cocoon.data.http.loader;
 
 import com.reid.cocoon.common.content.Constant;
 import com.reid.cocoon.data.api.PhotoApi;
-import com.reid.cocoon.data.bean.Photo;
+import com.reid.cocoon.data.model.Photo;
 import com.reid.cocoon.data.http.PhotoApiClient;
 
 import java.util.List;
@@ -10,6 +10,10 @@ import java.util.List;
 import io.reactivex.Observable;
 
 public class PhotoLoader extends Loader<PhotoApi> {
+
+    public static PhotoLoader getLoader(){
+        return new PhotoLoader();
+    }
 
     public Observable<List<Photo>> getPhotos(int pageNum, int pageCount){
         return getPhotos(pageNum, pageCount, "latest");

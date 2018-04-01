@@ -1,10 +1,11 @@
-package com.reid.cocoon.ui;
+package com.reid.cocoon.ui.activity;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.reid.cocoon.R;
+import com.reid.cocoon.ui.activity.HomeActivity;
 
 import java.util.concurrent.TimeUnit;
 

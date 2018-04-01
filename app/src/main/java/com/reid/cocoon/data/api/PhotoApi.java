@@ -1,6 +1,6 @@
 package com.reid.cocoon.data.api;
 
-import com.reid.cocoon.data.bean.Photo;
+import com.reid.cocoon.data.model.Photo;
 
 import java.util.List;
 

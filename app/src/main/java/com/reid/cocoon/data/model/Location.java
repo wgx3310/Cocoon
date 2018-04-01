@@ -1,4 +1,4 @@
-package com.reid.cocoon.data.bean;
+package com.reid.cocoon.data.model;
 
 import java.io.Serializable;
 
