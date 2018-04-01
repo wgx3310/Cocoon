@@ -1,4 +1,4 @@
-package com.reid.cocoon.viewholder;
+package com.reid.cocoon.ui.recycler.viewholder;
 
 import android.view.View;
 import android.widget.ImageView;

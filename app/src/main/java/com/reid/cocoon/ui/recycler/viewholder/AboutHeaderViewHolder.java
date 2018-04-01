@@ -1,10 +1,11 @@
-package com.reid.cocoon.viewholder;
+package com.reid.cocoon.ui.recycler.viewholder;
 
 import android.view.View;
 import android.widget.TextView;
 
 import com.reid.cocoon.R;
 import com.reid.cocoon.common.utils.AppHelper;
+import com.reid.cocoon.common.utils.IntentHelper;
 import com.reid.cocoon.data.model.Component;
 
 public class AboutHeaderViewHolder extends ItemViewHolder {
@@ -25,7 +26,7 @@ public class AboutHeaderViewHolder extends ItemViewHolder {
         mTitle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                IntentHelper.goWeb(v.getContext(), "Unsplash", "https://unsplash.com/");
             }
         });
     }

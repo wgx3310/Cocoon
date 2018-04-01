@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import android.widget.ProgressBar;
 
 import com.reid.cocoon.R;
-import com.reid.cocoon.adapter.ListAdapter;
+import com.reid.cocoon.ui.recycler.adapter.ListAdapter;
 import com.reid.cocoon.data.model.Data;
 import com.reid.cocoon.data.model.Photo;
 import com.reid.cocoon.data.http.loader.PhotoLoader;
@@ -117,9 +117,9 @@ public class NewFragment extends DisposableFragment implements SwipeRefreshLayou
                         isLoading = false;
                         if (module != null && module.components != null && module.components.size() > 0){
                             if (curPage == 1){
-                                mAdapter.setModule(module);
+                                mAdapter.setData(module);
                             } else {
-                                mAdapter.addModule(module);
+                                mAdapter.addData(module);
                             }
                             mPlasticView.loadMoreComplete();
                         }else {

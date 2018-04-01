@@ -1,4 +1,4 @@
-package com.reid.cocoon.adapter;
+package com.reid.cocoon.ui.recycler.adapter;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -6,11 +6,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.reid.cocoon.R;
-import com.reid.cocoon.viewholder.EmptyViewHolder;
-import com.reid.cocoon.viewholder.ItemViewHolder;
-import com.reid.cocoon.viewholder.PhotoCardViewHolder;
-import com.reid.cocoon.viewholder.utils.ViewHolderFactory;
-import com.reid.cocoon.viewholder.utils.ViewTypeEnum;
+import com.reid.cocoon.ui.recycler.viewholder.EmptyViewHolder;
+import com.reid.cocoon.ui.recycler.viewholder.ItemViewHolder;
+import com.reid.cocoon.ui.recycler.utils.ViewHolderFactory;
 import com.reid.cocoon.data.model.Component;
 import com.reid.cocoon.data.model.Data;
 
@@ -21,17 +19,17 @@ public class ListAdapter extends RecyclerView.Adapter<ItemViewHolder> {
 
     private List<Component> components = new ArrayList<>();
 
-    public void setModule(Data module){
-        if (module != null && module.components != null && module.components.size() > 0){
+    public void setData(Data data){
+        if (data != null && data.components != null && data.components.size() > 0){
             components.clear();
-            components.addAll(module.components);
+            components.addAll(data.components);
             notifyDataSetChanged();
         }
     }
 
-    public void addModule(Data module){
-        if (module != null && module.components != null && module.components.size() > 0){
-            components.addAll(module.components);
+    public void addData(Data data){
+        if (data != null && data.components != null && data.components.size() > 0){
+            components.addAll(data.components);
             notifyDataSetChanged();
         }
     }

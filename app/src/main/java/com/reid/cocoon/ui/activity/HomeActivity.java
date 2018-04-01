@@ -36,12 +36,6 @@ public class HomeActivity extends AppCompatActivity
         setContentView(R.layout.activity_home);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        DoubleTapHelper.attach(toolbar).listener(new DoubleTapHelper.OnDoubleTapListener() {
-            @Override
-            public void onDoubleTap(View v, MotionEvent e) {
-                Toast.makeText(v.getContext(), "Double click ", Toast.LENGTH_LONG).show();
-            }
-        });
 
         mDrawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
