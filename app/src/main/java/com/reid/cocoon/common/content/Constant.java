@@ -12,7 +12,7 @@ public class Constant {
     public static final String UNSPLASH_CLIENT_SECRET = "b9f7b47896202e7f608f524f81d6c4303b900ada4512676d7d2cc324b57cc8d8";
     public static final String UNSPLASH_CALLBACK_URL = "http://cocoon.reid.com/auth";
     public static final String UNSPLASH_OAUTH_URL = "https://unsplash.com/oauth/authorize?client_id="+ UNSPLASH_CLIENT_ID+"&redirect_uri=http%3A%2F%2Fcocoon.reid.com%2Fauth&response_type=code&scope=public+read_user+write_user+read_photos+write_photos+write_likes+write_followers+read_collections+write_collections";
-
+    public static final String UNSPLASH_UTM_PARAMETERS = "?utm_source=resplash&utm_medium=referral&utm_campaign=api-credit";
 
     public static final String BASE_URL_UNSPLASH_API = "https://api.unsplash.com/";
 }

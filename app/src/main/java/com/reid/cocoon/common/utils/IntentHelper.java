@@ -6,11 +6,23 @@ import android.text.TextUtils;
 
 import com.reid.cocoon.common.AppCompat;
 import com.reid.cocoon.common.content.SettingKeys;
+import com.reid.cocoon.data.model.Photo;
 import com.reid.cocoon.ui.activity.AboutActivity;
+import com.reid.cocoon.ui.activity.PhotoDetailActivity;
 import com.reid.cocoon.ui.activity.SettingsActivity;
 import com.reid.cocoon.ui.activity.WebActivity;
 
 public class IntentHelper {
+
+    public static void goPhotoDetail(Context context, Photo photo){
+        if (photo == null) return;
+
+        if (context == null) context = AppCompat.getContext();
+
+        Intent intent = new Intent(context, PhotoDetailActivity.class);
+        intent.putExtra(SettingKeys.KEY_PHOTO, photo);
+        context.startActivity(intent);
+    }
 
     public static void goSettings(Context context){
         if (context == null) context = AppCompat.getContext();

@@ -18,7 +18,7 @@ public class CollectionsFragment extends PlasticFragment {
 
     @Override
     public Observable<Data> getData(int curPage, int pageCount) {
-        return PhotoLoader.getLoader().getCollections(curPage, pageCount)
+        return PhotoLoader.getLoader().getFeaturedCollections(curPage, pageCount)
                 .map(new Function<List<Collection>, Data>() {
                     @Override
                     public Data apply(List<Collection> collections) throws Exception {

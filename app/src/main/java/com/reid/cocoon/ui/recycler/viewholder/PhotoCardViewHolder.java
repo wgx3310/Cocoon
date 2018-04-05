@@ -8,6 +8,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.reid.cocoon.R;
 import com.reid.cocoon.common.utils.AppHelper;
+import com.reid.cocoon.common.utils.IntentHelper;
 import com.reid.cocoon.data.model.Component;
 import com.reid.cocoon.data.model.Photo;
 import com.reid.cocoon.utils.PhotoHelper;
@@ -28,8 +29,15 @@ public class PhotoCardViewHolder extends ItemViewHolder {
 
     @Override
     public void onBindData(Component component) {
-        Photo photo = component.photo;
+        final Photo photo = component.photo;
+        if (photo == null) return;
 
+        itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                IntentHelper.goPhotoDetail(v.getContext(), photo);
+            }
+        });
         int screenWidth = AppHelper.getScreenWidth();
         int finalHeight = (int) (screenWidth / ((float)photo.width/(float)photo.height));
         finalHeight = Math.min(finalHeight, mMaxHeight);

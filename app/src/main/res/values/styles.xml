@@ -22,7 +22,6 @@
     </style>
 
     <style name="AppTheme.Translucent">
-        <item name="android:windowBackground">@null</item>
         <item name="android:windowTranslucentStatus">true</item>
         <item name="android:windowTranslucentNavigation">false</item>
     </style>

@@ -49,7 +49,7 @@ public interface PhotoApi {
     @GET("collections")
     Observable<List<Collection>> getCollections(@Query("page") int page, @Query("per_page") int perPage);
 
-    @GET("collections/features")
+    @GET("collections/featured")
     Observable<List<Collection>> getFeaturedCollections(@Query("page") int page, @Query("per_page") int perPage);
 
     @GET("collections/curated")

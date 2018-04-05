@@ -77,6 +77,9 @@ public class HomeActivity extends AppCompatActivity
             case R.id.nav_popular:
                 mViewPager.setCurrentItem(1);
                 break;
+            case R.id.nav_collection:
+                mViewPager.setCurrentItem(2);
+                break;
             case R.id.nav_setting:
                 IntentHelper.goSettings(this);
                 break;
