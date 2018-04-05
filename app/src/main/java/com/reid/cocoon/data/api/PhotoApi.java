@@ -1,5 +1,6 @@
 package com.reid.cocoon.data.api;
 
+import com.reid.cocoon.data.model.Collection;
 import com.reid.cocoon.data.model.Photo;
 
 import java.util.List;
@@ -41,4 +42,31 @@ public interface PhotoApi {
                                            @Query("query") String query,
                                            @Query("orientation") String orientation,
                                            @Query("count") int count);
+
+    @GET("photos/{id}/download")
+    Observable<String> getPhotoDownloadLink(@Path("id") String id);
+
+    @GET("collections")
+    Observable<List<Collection>> getCollections(@Query("page") Integer page, @Query("per_page") Integer perPage);
+
+    @GET("collections/features")
+    Observable<List<Collection>> getFeaturedCollections(@Query("page") Integer page, @Query("per_page") Integer perPage);
+
+    @GET("collections/curated")
+    Observable<List<Collection>> getCuratedCollections(@Query("page") Integer page, @Query("per_page") Integer perPage);
+
+    @GET("collections/{id}")
+    Observable<Collection> getCollection(@Path("id") String id);
+
+    @GET("collections/curated/{id}")
+    Observable<Collection> getCuratedCollection(@Path("id") String id);
+
+    @GET("collections/{id}/photos")
+    Observable<List<Photo>> getCollectionPhotos(@Path("id") String id, @Query("page") Integer page, @Query("per_page") Integer perPage);
+
+    @GET("collections/curated/{id}/photos")
+    Observable<List<Photo>> getCuratedCollectionPhotos(@Path("id") String id, @Query("page") Integer page, @Query("per_page") Integer perPage);
+
+    @GET("collections/{id}/related")
+    Observable<List<Collection>> getRelatedCollections(@Path("id") String id);
 }

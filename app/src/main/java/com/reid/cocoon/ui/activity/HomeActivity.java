@@ -1,6 +1,5 @@
 package com.reid.cocoon.ui.activity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
@@ -11,15 +10,10 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
-import android.view.MotionEvent;
-import android.view.View;
-import android.widget.Toast;
 
 import com.reid.cocoon.R;
 import com.reid.cocoon.adapter.PhotoPagerAdapter;
-import com.reid.cocoon.common.utils.DoubleTapHelper;
 import com.reid.cocoon.common.utils.IntentHelper;
-import com.reid.cocoon.ui.activity.AboutActivity;
 import com.reid.cocoon.ui.fragment.NewFragment;
 import com.reid.cocoon.ui.fragment.PopularFragment;
 
