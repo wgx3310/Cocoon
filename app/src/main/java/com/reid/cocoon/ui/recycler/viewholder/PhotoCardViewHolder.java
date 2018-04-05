@@ -1,6 +1,7 @@
 package com.reid.cocoon.ui.recycler.viewholder;
 
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -9,18 +10,20 @@ import com.reid.cocoon.R;
 import com.reid.cocoon.common.utils.AppHelper;
 import com.reid.cocoon.data.model.Component;
 import com.reid.cocoon.data.model.Photo;
+import com.reid.cocoon.utils.PhotoHelper;
 
 public class PhotoCardViewHolder extends ItemViewHolder {
 
-    private View mCard;
+    private int mMaxHeight;
     private ImageView mImage;
     private TextView mText;
 
     public PhotoCardViewHolder(View itemView) {
         super(itemView);
-        mCard = itemView.findViewById(R.id.item_card);
         mImage = itemView.findViewById(R.id.item_card_img);
         mText = itemView.findViewById(R.id.item_card_text);
+
+        mMaxHeight = getContext().getResources().getDimensionPixelSize(R.dimen.dp_250);
     }
 
     @Override
@@ -29,8 +32,12 @@ public class PhotoCardViewHolder extends ItemViewHolder {
 
         int screenWidth = AppHelper.getScreenWidth();
         int finalHeight = (int) (screenWidth / ((float)photo.width/(float)photo.height));
-        mImage.setMinimumHeight(finalHeight);
+        finalHeight = Math.min(finalHeight, mMaxHeight);
+        ViewGroup.LayoutParams layoutParams = mImage.getLayoutParams();
+        layoutParams.height = finalHeight;
+        mImage.setLayoutParams(layoutParams);
+
         mText.setText(photo.user.userName);
-        Glide.with(itemView.getContext()).load(photo.urls.regular).into(mImage);
+        Glide.with(itemView.getContext()).load(PhotoHelper.choosePhotoUrl(photo)).into(mImage);
     }
 }

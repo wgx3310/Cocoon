@@ -14,6 +14,7 @@ import android.view.MenuItem;
 import com.reid.cocoon.R;
 import com.reid.cocoon.adapter.PhotoPagerAdapter;
 import com.reid.cocoon.common.utils.IntentHelper;
+import com.reid.cocoon.ui.fragment.CollectionsFragment;
 import com.reid.cocoon.ui.fragment.NewFragment;
 import com.reid.cocoon.ui.fragment.PopularFragment;
 
@@ -46,7 +47,9 @@ public class HomeActivity extends AppCompatActivity
         mPagerAdapter = new PhotoPagerAdapter(getSupportFragmentManager());
         mPagerAdapter.addFragment(NewFragment.newInstance(), "NEW");
         mPagerAdapter.addFragment(PopularFragment.newInstance(), "POPULAR");
+        mPagerAdapter.addFragment(CollectionsFragment.newInstance(), "COLLECTIONS");
         mViewPager.setAdapter(mPagerAdapter);
+        mViewPager.setOffscreenPageLimit(mPagerAdapter.getCount());
 
         mTabLayout = findViewById(R.id.tabLayout);
         mTabLayout.setupWithViewPager(mViewPager);

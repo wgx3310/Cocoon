@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:ignore="MissingDefaultResource">
+
+    <ImageView
+        android:id="@+id/item_collection_img"
+        android:layout_width="fill_parent"
+        android:layout_height="250dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:background="#c0c0c0"/>
+
+    <TextView
+        android:id="@+id/item_collection_name"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:fontFamily="sans-serif-medium"
+        android:textColor="@color/black"
+        android:paddingTop="@dimen/dp_10"
+        android:paddingLeft="@dimen/dp_26"
+        android:paddingRight="@dimen/dp_26"
+        android:lines="1"
+        android:ellipsize="end"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/item_collection_size"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:fontFamily="sans-serif-medium"
+        android:paddingLeft="@dimen/dp_26"
+        android:paddingRight="@dimen/dp_26"
+        android:paddingBottom="@dimen/dp_10"
+        android:textColor="@color/black"
+        android:lines="1"
+        android:ellipsize="end"
+        android:textSize="13sp" />
+</LinearLayout>

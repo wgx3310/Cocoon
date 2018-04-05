@@ -20,6 +20,8 @@ public class Collection implements Serializable {
     public Photo coverPhoto;
     public User user;
     public Links links;
+    @SerializedName("total_photos")
+    public int totalPhotos;
 
     @Override
     public String toString() {
@@ -32,6 +34,7 @@ public class Collection implements Serializable {
                 ", coverPhoto=" + coverPhoto +
                 ", user=" + user +
                 ", links=" + links +
+                ", totalPhotos=" + totalPhotos +
                 '}';
     }
 }

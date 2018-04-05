@@ -47,13 +47,13 @@ public interface PhotoApi {
     Observable<String> getPhotoDownloadLink(@Path("id") String id);
 
     @GET("collections")
-    Observable<List<Collection>> getCollections(@Query("page") Integer page, @Query("per_page") Integer perPage);
+    Observable<List<Collection>> getCollections(@Query("page") int page, @Query("per_page") int perPage);
 
     @GET("collections/features")
-    Observable<List<Collection>> getFeaturedCollections(@Query("page") Integer page, @Query("per_page") Integer perPage);
+    Observable<List<Collection>> getFeaturedCollections(@Query("page") int page, @Query("per_page") int perPage);
 
     @GET("collections/curated")
-    Observable<List<Collection>> getCuratedCollections(@Query("page") Integer page, @Query("per_page") Integer perPage);
+    Observable<List<Collection>> getCuratedCollections(@Query("page") int page, @Query("per_page") int perPage);
 
     @GET("collections/{id}")
     Observable<Collection> getCollection(@Path("id") String id);
@@ -62,10 +62,10 @@ public interface PhotoApi {
     Observable<Collection> getCuratedCollection(@Path("id") String id);
 
     @GET("collections/{id}/photos")
-    Observable<List<Photo>> getCollectionPhotos(@Path("id") String id, @Query("page") Integer page, @Query("per_page") Integer perPage);
+    Observable<List<Photo>> getCollectionPhotos(@Path("id") String id, @Query("page") int page, @Query("per_page") int perPage);
 
     @GET("collections/curated/{id}/photos")
-    Observable<List<Photo>> getCuratedCollectionPhotos(@Path("id") String id, @Query("page") Integer page, @Query("per_page") Integer perPage);
+    Observable<List<Photo>> getCuratedCollectionPhotos(@Path("id") String id, @Query("page") int page, @Query("per_page") int perPage);
 
     @GET("collections/{id}/related")
     Observable<List<Collection>> getRelatedCollections(@Path("id") String id);

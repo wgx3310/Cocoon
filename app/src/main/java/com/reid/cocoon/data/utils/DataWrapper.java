@@ -1,5 +1,6 @@
 package com.reid.cocoon.data.utils;
 
+import com.reid.cocoon.data.model.Collection;
 import com.reid.cocoon.data.model.Item;
 import com.reid.cocoon.ui.recycler.utils.ViewTypeEnum;
 import com.reid.cocoon.data.model.Component;
@@ -21,6 +22,22 @@ public class DataWrapper {
             Component component = new Component();
             component.photo = photo;
             component.type = ViewTypeEnum.TYPE_PHOTO_A;
+            data.components.add(component);
+        }
+        return data;
+    }
+
+    public static Data wrapCollectionData(List<Collection> collections){
+        Data data = new Data();
+        if (collections == null || collections.size() <= 0){
+            return data;
+        }
+
+        data.components = new ArrayList<>();
+        for (Collection collection : collections){
+            Component component = new Component();
+            component.collection = collection;
+            component.type = ViewTypeEnum.TYPE_COLLECTION_A;
             data.components.add(component);
         }
         return data;

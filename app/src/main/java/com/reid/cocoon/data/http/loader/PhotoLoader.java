@@ -2,6 +2,7 @@ package com.reid.cocoon.data.http.loader;
 
 import com.reid.cocoon.common.content.Constant;
 import com.reid.cocoon.data.api.PhotoApi;
+import com.reid.cocoon.data.model.Collection;
 import com.reid.cocoon.data.model.Photo;
 import com.reid.cocoon.data.http.PhotoApiClient;
 
@@ -41,6 +42,42 @@ public class PhotoLoader extends Loader<PhotoApi> {
                                                   String userName, String query, String orientation, int count){
         return Impl().getPhotoRandom(collections, featured, userName, query, orientation, count)
                 .compose(this.<List<Photo>>transformer());
+    }
+
+    public Observable<String> getPhotoDownloadLink(String id){
+        return Impl().getPhotoDownloadLink(id).compose(this.<String>transformer());
+    }
+
+    public Observable<List<Collection>> getCollections(int page, int pageCount){
+        return Impl().getCollections(page, pageCount).compose(this.<List<Collection>>transformer());
+    }
+
+    public Observable<List<Collection>> getFeaturedCollections(int page, int pageCount){
+        return Impl().getFeaturedCollections(page, pageCount).compose(this.<List<Collection>>transformer());
+    }
+
+    public Observable<List<Collection>> getCuratedCollections(int page, int pageCount){
+        return Impl().getCuratedCollections(page, pageCount).compose(this.<List<Collection>>transformer());
+    }
+
+    public Observable<Collection> getCollection(String id){
+        return Impl().getCollection(id).compose(this.<Collection>transformer());
+    }
+
+    public Observable<Collection> getCuratedCollection(String id){
+        return Impl().getCuratedCollection(id).compose(this.<Collection>transformer());
+    }
+
+    public Observable<List<Collection>> getRelatedCollections(String id){
+        return Impl().getRelatedCollections(id).compose(this.<List<Collection>>transformer());
+    }
+
+    public Observable<List<Photo>> getCollectionPhotos(String id, int page, int pageCount){
+        return Impl().getCollectionPhotos(id, page, pageCount).compose(this.<List<Photo>>transformer());
+    }
+
+    public Observable<List<Photo>> getCuratedCollectionPhotos(String id, int page, int pageCount){
+        return Impl().getCuratedCollectionPhotos(id, page, pageCount).compose(this.<List<Photo>>transformer());
     }
 
     @Override
