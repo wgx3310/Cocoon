@@ -25,7 +25,7 @@ public class PhotoCardViewHolder extends ItemViewHolder {
         mImage = itemView.findViewById(R.id.item_card_img);
         mText = itemView.findViewById(R.id.item_card_text);
 
-        mMaxHeight = getContext().getResources().getDimensionPixelSize(R.dimen.dp_250);
+        mMaxHeight = getContext().getResources().getDimensionPixelSize(R.dimen.dp_360);
     }
 
     @Override

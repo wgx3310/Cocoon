@@ -13,4 +13,5 @@
     <dimen name="dp_20">20dp</dimen>
     <dimen name="dp_26">26dp</dimen>
     <dimen name="dp_250">250dp</dimen>
+    <dimen name="dp_360">360dp</dimen>
 </resources>

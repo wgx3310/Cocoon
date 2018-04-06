@@ -6,8 +6,10 @@ import android.text.TextUtils;
 
 import com.reid.cocoon.common.AppCompat;
 import com.reid.cocoon.common.content.SettingKeys;
+import com.reid.cocoon.data.model.Collection;
 import com.reid.cocoon.data.model.Photo;
 import com.reid.cocoon.ui.activity.AboutActivity;
+import com.reid.cocoon.ui.activity.PhotoCollectionsActivity;
 import com.reid.cocoon.ui.activity.PhotoDetailActivity;
 import com.reid.cocoon.ui.activity.SettingsActivity;
 import com.reid.cocoon.ui.activity.WebActivity;
@@ -21,6 +23,16 @@ public class IntentHelper {
 
         Intent intent = new Intent(context, PhotoDetailActivity.class);
         intent.putExtra(SettingKeys.KEY_PHOTO, photo);
+        context.startActivity(intent);
+    }
+
+    public static void goCollectionDetail(Context context, Collection collection){
+        if (collection == null || collection.coverPhoto == null) return;
+
+        if (context == null) context = AppCompat.getContext();
+
+        Intent intent = new Intent(context, PhotoCollectionsActivity.class);
+        intent.putExtra(SettingKeys.KEY_COLLECTION, collection);
         context.startActivity(intent);
     }
 

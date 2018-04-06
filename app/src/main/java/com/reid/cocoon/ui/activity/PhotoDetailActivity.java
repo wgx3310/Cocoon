@@ -13,7 +13,6 @@ import com.bumptech.glide.request.RequestOptions;
 import com.reid.cocoon.R;
 import com.reid.cocoon.common.content.SettingKeys;
 import com.reid.cocoon.common.utils.AppHelper;
-import com.reid.cocoon.common.utils.Logger;
 import com.reid.cocoon.data.model.Photo;
 import com.reid.cocoon.utils.PhotoHelper;
 
@@ -63,7 +62,7 @@ public class PhotoDetailActivity extends BasicActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.activity_detail, menu);
+        getMenuInflater().inflate(R.menu.activity_photo_detail, menu);
         return super.onCreateOptionsMenu(menu);
     }
 

@@ -26,16 +26,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.activity.HomeActivity"
-            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.activity.HomeActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ui.activity.AboutActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".ui.activity.WebActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".ui.activity.SettingsActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".ui.activity.PhotoDetailActivity"
+        <activity
+            android:name=".ui.activity.WebActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.SettingsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.PhotoDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".ui.activity.PhotoCollectionsActivity"
             android:screenOrientation="portrait"/>
     </application>
 

@@ -6,8 +6,9 @@ import java.io.Serializable;
 
 
 public class Collection implements Serializable {
-    public int id;
+    public String id;
     public String title;
+    public String description;
 
     @SerializedName("published_at")
     public String publishedAt;

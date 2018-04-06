@@ -9,6 +9,7 @@ import com.bumptech.glide.request.RequestOptions;
 import com.reid.cocoon.R;
 import com.reid.cocoon.data.model.Collection;
 import com.reid.cocoon.data.model.Component;
+import com.reid.cocoon.utils.IntentHelper;
 import com.reid.cocoon.utils.PhotoHelper;
 
 public class CollectionViewHolder extends ItemViewHolder {
@@ -26,9 +27,15 @@ public class CollectionViewHolder extends ItemViewHolder {
 
     @Override
     public void onBindData(Component component) {
-        Collection collection = component.collection;
+        final Collection collection = component.collection;
         if (collection == null || collection.coverPhoto == null) return;
 
+        itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                IntentHelper.goCollectionDetail(v.getContext(), collection);
+            }
+        });
         Glide.with(mContext).load(PhotoHelper.choosePhotoUrl(collection.coverPhoto))
                 .apply(new RequestOptions().placeholder(PhotoHelper.getPhotoColorDrawable(collection.coverPhoto)))
                 .into(mImg);

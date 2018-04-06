@@ -10,5 +10,6 @@ public class SettingKeys {
     public static final String KEY_TITLE = "title";
     public static final String KEY_URL = "url";
     public static final String KEY_PHOTO = "photo";
+    public static final String KEY_COLLECTION = "collection";
 
 }
