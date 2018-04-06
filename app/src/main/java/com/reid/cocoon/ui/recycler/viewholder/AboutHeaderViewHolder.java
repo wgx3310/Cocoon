@@ -5,7 +5,7 @@ import android.widget.TextView;
 
 import com.reid.cocoon.R;
 import com.reid.cocoon.common.utils.AppHelper;
-import com.reid.cocoon.common.utils.IntentHelper;
+import com.reid.cocoon.utils.IntentHelper;
 import com.reid.cocoon.data.model.Component;
 
 public class AboutHeaderViewHolder extends ItemViewHolder {

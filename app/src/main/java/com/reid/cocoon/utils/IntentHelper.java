@@ -1,4 +1,4 @@
-package com.reid.cocoon.common.utils;
+package com.reid.cocoon.utils;
 
 import android.content.Context;
 import android.content.Intent;

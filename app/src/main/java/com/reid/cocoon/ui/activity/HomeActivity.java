@@ -13,7 +13,7 @@ import android.view.MenuItem;
 
 import com.reid.cocoon.R;
 import com.reid.cocoon.adapter.PhotoPagerAdapter;
-import com.reid.cocoon.common.utils.IntentHelper;
+import com.reid.cocoon.utils.IntentHelper;
 import com.reid.cocoon.ui.fragment.CollectionsFragment;
 import com.reid.cocoon.ui.fragment.NewFragment;
 import com.reid.cocoon.ui.fragment.PopularFragment;

@@ -2,6 +2,9 @@ package com.reid.cocoon.utils;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.text.TextUtils;
 
@@ -74,5 +77,18 @@ public class PhotoHelper {
 
         Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(photo.links.html + Constant.UNSPLASH_UTM_PARAMETERS));
         context.startActivity(i);
+    }
+
+    public static String getPhotoColor(Photo photo){
+        String color = "#C0C0C0";
+        if (photo != null && !TextUtils.isEmpty(photo.color)){
+            color = photo.color;
+        }
+        return color;
+    }
+
+    public static Drawable getPhotoColorDrawable(Photo photo){
+        String photoColor = getPhotoColor(photo);
+        return new ColorDrawable(Color.parseColor(photoColor));
     }
 }

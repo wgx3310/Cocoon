@@ -5,6 +5,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.reid.cocoon.R;
 import com.reid.cocoon.data.model.Collection;
 import com.reid.cocoon.data.model.Component;
@@ -26,9 +27,11 @@ public class CollectionViewHolder extends ItemViewHolder {
     @Override
     public void onBindData(Component component) {
         Collection collection = component.collection;
-        if (collection == null) return;
+        if (collection == null || collection.coverPhoto == null) return;
 
-        Glide.with(mContext).load(PhotoHelper.choosePhotoUrl(collection.coverPhoto)).into(mImg);
+        Glide.with(mContext).load(PhotoHelper.choosePhotoUrl(collection.coverPhoto))
+                .apply(new RequestOptions().placeholder(PhotoHelper.getPhotoColorDrawable(collection.coverPhoto)))
+                .into(mImg);
 
         mName.setText(collection.title);
         mCount.setText(collection.totalPhotos + " Photos");

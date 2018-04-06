@@ -6,9 +6,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.reid.cocoon.R;
 import com.reid.cocoon.common.utils.AppHelper;
-import com.reid.cocoon.common.utils.IntentHelper;
+import com.reid.cocoon.utils.IntentHelper;
 import com.reid.cocoon.data.model.Component;
 import com.reid.cocoon.data.model.Photo;
 import com.reid.cocoon.utils.PhotoHelper;
@@ -46,6 +47,8 @@ public class PhotoCardViewHolder extends ItemViewHolder {
         mImage.setLayoutParams(layoutParams);
 
         mText.setText(photo.user.userName);
-        Glide.with(itemView.getContext()).load(PhotoHelper.choosePhotoUrl(photo)).into(mImage);
+        Glide.with(itemView.getContext()).load(PhotoHelper.choosePhotoUrl(photo))
+                .apply(new RequestOptions().placeholder(PhotoHelper.getPhotoColorDrawable(photo)))
+                .into(mImage);
     }
 }

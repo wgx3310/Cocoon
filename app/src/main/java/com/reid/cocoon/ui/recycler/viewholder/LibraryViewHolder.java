@@ -4,7 +4,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.reid.cocoon.R;
-import com.reid.cocoon.common.utils.IntentHelper;
+import com.reid.cocoon.utils.IntentHelper;
 import com.reid.cocoon.data.model.Component;
 import com.reid.cocoon.data.model.Item;
 

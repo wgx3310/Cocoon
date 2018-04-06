@@ -1,5 +1,11 @@
 package com.reid.cocoon.ui.fragment;
 
+import android.graphics.Rect;
+import android.support.annotation.NonNull;
+import android.support.v7.widget.RecyclerView;
+import android.view.View;
+
+import com.reid.cocoon.R;
 import com.reid.cocoon.data.model.Data;
 import com.reid.cocoon.data.model.Photo;
 import com.reid.cocoon.data.http.loader.PhotoLoader;
@@ -14,6 +20,17 @@ public class PopularFragment extends PlasticFragment {
 
     public static PopularFragment newInstance(){
         return new PopularFragment();
+    }
+
+    @Override
+    protected void initView(@NonNull View view) {
+        super.initView(view);
+        mPlasticView.addItemDecoration(new RecyclerView.ItemDecoration() {
+            @Override
+            public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
+                outRect.bottom = getResources().getDimensionPixelSize(R.dimen.dp_20);
+            }
+        });
     }
 
     @Override

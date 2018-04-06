@@ -39,6 +39,10 @@ public abstract class PlasticFragment extends DisposableFragment implements Swip
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        initView(view);
+    }
+
+    protected void initView(@NonNull View view) {
         mLoadingView = view.findViewById(R.id.progress_loading);
         mLoadingView.setVisibility(View.VISIBLE);
 

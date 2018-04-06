@@ -11,7 +11,7 @@ import com.reid.cocoon.R;
 import com.reid.cocoon.common.AppCompat;
 import com.reid.cocoon.common.content.Tips;
 import com.reid.cocoon.common.utils.AppHelper;
-import com.reid.cocoon.common.utils.IntentHelper;
+import com.reid.cocoon.utils.IntentHelper;
 import com.reid.cocoon.data.io.ACache;
 
 import io.reactivex.Observable;
