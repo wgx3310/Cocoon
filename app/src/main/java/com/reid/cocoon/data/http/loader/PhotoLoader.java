@@ -5,6 +5,7 @@ import com.reid.cocoon.data.api.PhotoApi;
 import com.reid.cocoon.data.model.Collection;
 import com.reid.cocoon.data.model.Photo;
 import com.reid.cocoon.data.http.PhotoApiClient;
+import com.reid.cocoon.data.model.Stats;
 
 import java.util.List;
 
@@ -36,6 +37,10 @@ public class PhotoLoader extends Loader<PhotoApi> {
 
     public Observable<Photo> getPhoto(String id){
         return Impl().getPhoto(id).compose(this.<Photo>transformer());
+    }
+
+    public Observable<Stats> getPhotoStats(String id){
+        return Impl().getPhotoStats(id).compose(this.<Stats>transformer());
     }
 
     public Observable<List<Photo>> getPhotoRandom(String collections, boolean featured,

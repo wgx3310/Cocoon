@@ -25,11 +25,15 @@ public class Photo implements Serializable{
     @SerializedName("liked_by_user")
     public boolean likedByUser;
 
+    public int downloads;
     public int likes;
     public User user;
     public Exif exif;
     public Location location;
     public List<Category> categories;
+
+    @SerializedName("current_user_collections")
+    public List<Collection> currentUserCollections;
 
     @Override
     public String toString() {
@@ -45,10 +49,12 @@ public class Photo implements Serializable{
                 ", links=" + links +
                 ", likedByUser=" + likedByUser +
                 ", likes=" + likes +
+                ", downloads=" + downloads +
                 ", user=" + user +
                 ", exif=" + exif +
                 ", location=" + location +
                 ", categories=" + categories +
+                ", current_user_collections=" + currentUserCollections +
                 '}';
     }
 }

@@ -2,6 +2,7 @@ package com.reid.cocoon.data.api;
 
 import com.reid.cocoon.data.model.Collection;
 import com.reid.cocoon.data.model.Photo;
+import com.reid.cocoon.data.model.Stats;
 
 import java.util.List;
 
@@ -24,6 +25,9 @@ public interface PhotoApi {
 
     @GET("photos/{id}")
     Observable<Photo> getPhoto(@Path("id") String id);
+
+    @GET("photos/{id}/statistics")
+    Observable<Stats> getPhotoStats(@Path("id") String id);
 
     /**
      * You can’t use the collections and query parameters in the same request
