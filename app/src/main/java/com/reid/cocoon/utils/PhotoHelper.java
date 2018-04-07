@@ -1,5 +1,6 @@
 package com.reid.cocoon.utils;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
@@ -7,12 +8,26 @@ import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.text.TextUtils;
+import android.widget.Toast;
 
+import com.liulishuo.filedownloader.BaseDownloadTask;
+import com.liulishuo.filedownloader.FileDownloadSampleListener;
+import com.liulishuo.filedownloader.FileDownloader;
 import com.reid.cocoon.common.AppCompat;
 import com.reid.cocoon.common.content.Constant;
+import com.reid.cocoon.common.content.Tips;
+import com.reid.cocoon.data.http.loader.PhotoLoader;
 import com.reid.cocoon.data.model.Collection;
+import com.reid.cocoon.data.model.Item;
 import com.reid.cocoon.data.model.Photo;
 import com.reid.cocoon.data.model.Urls;
+import com.reid.permission.Permissions;
+import com.reid.permission.listener.OnResult;
+
+import java.io.File;
+
+import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Consumer;
 
 public class PhotoHelper {
 
@@ -106,5 +121,57 @@ public class PhotoHelper {
     public static Drawable getPhotoColorDrawable(Photo photo){
         String photoColor = getPhotoColor(photo);
         return new ColorDrawable(Color.parseColor(photoColor));
+    }
+
+    public static void downloadPhoto(final Context context, final Photo photo){
+        if (context == null || photo == null || photo.urls == null) return;
+
+        PhotoDownloadHelper helper = new PhotoDownloadHelper(context, photo);
+        helper.setOnDownloadResult(new PhotoDownloadHelper.OnDownloadResult() {
+            @Override
+            public void onStart() {
+                Tips.toast("下载开始");
+            }
+
+            @Override
+            public void onSuccess() {
+                Tips.toast("下载成功");
+            }
+
+            @Override
+            public void onFail(String error) {
+                Tips.toast("下载失败: " + error);
+            }
+        });
+        helper.startDownload();
+
+//        final String url = photo.urls.raw;
+//        String filename = photo.id + "_" + "raw.png";
+//
+//        File dir = context.getExternalFilesDir("images");
+//        final String path = new File(dir, filename).getAbsolutePath();
+//        FileDownloader.getImpl().create(url).setPath(path)
+//                .setWifiRequired(true)
+//                .setListener(new FileDownloadSampleListener() {
+//
+//                    @Override
+//                    protected void started(BaseDownloadTask task) {
+//                        super.started(task);
+//                        Tips.toast("下载开始");
+//                    }
+//
+//                    @Override
+//                    protected void completed(BaseDownloadTask task) {
+//                        super.completed(task);
+//                        Tips.toast("下载成功，请查看" + path);
+//                    }
+//
+//                    @Override
+//                    protected void error(BaseDownloadTask task, Throwable e) {
+//                        super.error(task, e);
+//                        Tips.toast("下载失败");
+//                    }
+//                }).start();
+
     }
 }

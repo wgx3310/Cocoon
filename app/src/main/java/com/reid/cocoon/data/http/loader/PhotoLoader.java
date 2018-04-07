@@ -3,6 +3,7 @@ package com.reid.cocoon.data.http.loader;
 import com.reid.cocoon.common.content.Constant;
 import com.reid.cocoon.data.api.PhotoApi;
 import com.reid.cocoon.data.model.Collection;
+import com.reid.cocoon.data.model.Item;
 import com.reid.cocoon.data.model.Photo;
 import com.reid.cocoon.data.http.PhotoApiClient;
 import com.reid.cocoon.data.model.Stats;
@@ -49,8 +50,8 @@ public class PhotoLoader extends Loader<PhotoApi> {
                 .compose(this.<List<Photo>>transformer());
     }
 
-    public Observable<String> getPhotoDownloadLink(String id){
-        return Impl().getPhotoDownloadLink(id).compose(this.<String>transformer());
+    public Observable<Item> getPhotoDownloadLink(String id){
+        return Impl().getPhotoDownloadLink(id).compose(this.<Item>transformer());
     }
 
     public Observable<List<Collection>> getCollections(int page, int pageCount){

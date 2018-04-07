@@ -1,6 +1,7 @@
 package com.reid.cocoon.data.api;
 
 import com.reid.cocoon.data.model.Collection;
+import com.reid.cocoon.data.model.Item;
 import com.reid.cocoon.data.model.Photo;
 import com.reid.cocoon.data.model.Stats;
 
@@ -48,7 +49,7 @@ public interface PhotoApi {
                                            @Query("count") int count);
 
     @GET("photos/{id}/download")
-    Observable<String> getPhotoDownloadLink(@Path("id") String id);
+    Observable<Item> getPhotoDownloadLink(@Path("id") String id);
 
     @GET("collections")
     Observable<List<Collection>> getCollections(@Query("page") int page, @Query("per_page") int perPage);

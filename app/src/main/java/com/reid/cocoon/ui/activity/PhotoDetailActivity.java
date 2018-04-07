@@ -77,10 +77,15 @@ public class PhotoDetailActivity extends BasicActivity {
                 .subscribe(new Consumer<Stats>() {
                     @Override
                     public void accept(Stats stats) throws Exception {
-                        if (stats != null && !TextUtils.isEmpty(stats.id)){
+                        if (stats != null && !TextUtils.isEmpty(stats.id)) {
                             mStats = stats;
                             setStatViews();
                         }
+                    }
+                }, new Consumer<Throwable>() {
+                    @Override
+                    public void accept(Throwable throwable) throws Exception {
+                        Logger.e(TAG, "get stats err: " + throwable.getMessage());
                     }
                 });
         addDisposable(disposable);
@@ -101,8 +106,6 @@ public class PhotoDetailActivity extends BasicActivity {
         if (intent.getSerializableExtra(SettingKeys.KEY_PHOTO) != null){
             mPhoto = (Photo) intent.getSerializableExtra(SettingKeys.KEY_PHOTO);
         }
-
-        Logger.e("WGX", "handleIntent " + mPhoto);
 
     }
 
