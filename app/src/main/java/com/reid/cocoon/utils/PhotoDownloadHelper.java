@@ -107,6 +107,11 @@ public class PhotoDownloadHelper implements OnResult {
                     public void accept(Item item) throws Exception {
 
                     }
+                }, new Consumer<Throwable>() {
+                    @Override
+                    public void accept(Throwable throwable) throws Exception {
+                        Logger.e(TAG, "request download link err: " + throwable.getMessage());
+                    }
                 });
     }
 
