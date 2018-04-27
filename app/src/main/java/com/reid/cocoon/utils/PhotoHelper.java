@@ -1,6 +1,5 @@
 package com.reid.cocoon.utils;
 
-import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
@@ -8,26 +7,12 @@ import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.text.TextUtils;
-import android.widget.Toast;
-
-import com.liulishuo.filedownloader.BaseDownloadTask;
-import com.liulishuo.filedownloader.FileDownloadSampleListener;
-import com.liulishuo.filedownloader.FileDownloader;
 import com.reid.cocoon.common.AppCompat;
 import com.reid.cocoon.common.content.Constant;
 import com.reid.cocoon.common.content.Tips;
-import com.reid.cocoon.data.http.loader.PhotoLoader;
 import com.reid.cocoon.data.model.Collection;
-import com.reid.cocoon.data.model.Item;
 import com.reid.cocoon.data.model.Photo;
 import com.reid.cocoon.data.model.Urls;
-import com.reid.permission.Permissions;
-import com.reid.permission.listener.OnResult;
-
-import java.io.File;
-
-import io.reactivex.disposables.Disposable;
-import io.reactivex.functions.Consumer;
 
 public class PhotoHelper {
 

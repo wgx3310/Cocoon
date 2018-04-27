@@ -33,7 +33,14 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".ui.activity.AboutActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:scheme="reid"
+                    android:host="about"/>
+            </intent-filter>
+        </activity>
         <activity
             android:name=".ui.activity.WebActivity"
             android:screenOrientation="portrait" />
